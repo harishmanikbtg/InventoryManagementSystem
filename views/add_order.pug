@@ -1,0 +1,35 @@
+extends base.pug
+
+//- block script
+//-     script(src='../static/index.js')
+
+block style
+    style 
+        include ../static/add_order.css
+    style 
+        include ../static/base.css
+
+block content
+    div.container
+        h2 New Order 
+        form.form(action="/add-order", method="post")
+            div.form-group
+                label(for='orderId') Order Id:
+                input.form-control(type='text', placeholder='Order Id' name='orderId')
+            div.form-group
+                label(for='productName') Product Name:
+                input.form-control(type='text', placeholder='Product Name' name='productName')
+            div.form-group
+                label(for='orderQuantity') Quantity:
+                input.form-control(type='text', placeholder='Quantity' name='orderQuantity')
+            div.form-group
+                label(for='orderPrice') Price:
+                input.form-control(type='text', placeholder='Price' name='orderPrice')
+            div.form-group
+                label(for='customerName') Customer Name:
+                input.form-control(type='text', placeholder='Customer Name' name='customerName')
+            
+            div.btn-group
+                button.btn(type="submit", name="asdf") Submit
+                button.btn 
+                    a(href="/order") All Orders

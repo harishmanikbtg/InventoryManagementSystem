@@ -1,0 +1,17 @@
+doctype html
+html
+    head
+        style 
+            include ../static/style.css
+        title Document
+    body
+        div.navbar
+            ul
+                li #[a(href="/") Home]
+                li #[a(href="/inventory") Inventory]
+                li #[a(href="/orders") Orders]
+                li #[a(href="/purchase") Purchase]
+        div.container
+            | This is container.
+        script 
+            include ../static/index.js

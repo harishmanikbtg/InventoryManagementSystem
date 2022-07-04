@@ -1,0 +1,43 @@
+extends base.pug
+
+block script
+    script(src='../static/index.js')
+
+block style
+    style 
+        include ../static/stock.css
+    style 
+        include ../static/base.css
+
+
+block content
+    div.container
+        div.head
+            h2 Stock Information
+        div.btn
+            a(href="/add-stock") New stock
+        div.table
+            table(style='width:100%')
+                thead 
+                    tr
+                        th Product Name
+                        th Quantity
+                        th Price/Unit
+                        th Total cost
+                        //- th Supplier Name
+                        //- th Supplier Contact
+                        th Time
+                        th Action
+                tbody
+                    each stock in purch 
+                        tr 
+                            td #{stock.productName}
+                            td #{stock.stockQuantity}
+                            td #{stock.stockPrice}
+                            td #{stock.stockPrice * stock.stockQuantity}
+                            //- td #{stock.supplierName}
+                            //- td #{stock.supplierContact}
+                            td #{stock.createdAt}
+                            td 
+                                a(class = "btn-update", href="stock/update-stock/"+stock._id) Update stock
+                                a(class = "btn-update", href="/stock/delete/"+stock._id) Delete stock

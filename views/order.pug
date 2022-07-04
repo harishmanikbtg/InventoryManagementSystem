@@ -1,0 +1,45 @@
+extends base.pug
+
+block script
+    script(src='../static/index.js')
+
+block style
+    style 
+        include ../static/order.css
+    style 
+        include ../static/base.css
+
+
+block content
+    div.container
+        div.head
+            h2 Orders
+        div.btn
+            a.l-btn(href="/add-order") New Order
+            button.btn-sort Sort
+        div.table
+            table(style='width:100%')
+                thead 
+                    tr
+                        th Order Id
+                        th Product Name
+                        th Quantity
+                        th Price/Unit
+                        th Total Amount
+                        th Customer Name
+                        th Action
+                tbody
+                    each order in ord 
+                        tr 
+                            td #{order.orderId}
+                            td #{order.productName}
+                            td #{order.orderQuantity}
+                            td #{order.orderPrice}
+                            td #{order.orderPrice * order.orderQuantity}
+                            td #{order.customerName}
+                            td 
+                                a(class = "btn-update", href="order/update-order/"+order._id) Update Order
+                                a(class = "btn-update", href="/order/delete/"+order._id) Delete Order
+
+                            
+                            

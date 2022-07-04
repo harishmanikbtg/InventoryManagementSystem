@@ -1,0 +1,18 @@
+extends base1.pug
+ 
+block script
+    script(src='../static/index.js')
+ 
+block style
+    style 
+        include ../static/home.css
+    style 
+        include ../static/base1.css
+
+
+block content
+        .p-list 
+            span.p-head Inventory Management System
+            a.p-link(href="/stock") Go to Stocks
+            a.p-link(href="/order") Go to Orders 
+

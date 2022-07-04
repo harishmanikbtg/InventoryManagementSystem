@@ -1,0 +1,17 @@
+{
+  "name": "db-project-5",
+  "version": "1.0.0",
+  "description": "dbms project for fifth semester",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Harish Manik",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.7",
+    "pug": "^3.0.2"
+  }
+}

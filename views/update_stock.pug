@@ -1,0 +1,43 @@
+extends base.pug
+
+//- block script
+//-     script(src='../static/index.js')
+
+block style
+    style 
+        include ../static/add_stock.css
+    style 
+        include ../static/base.css
+
+
+block content
+    div.container
+        h2 Update Purchase 
+        form.form(action="/stock/update-stock/"+stock._id, method="post")
+            div.form-group
+                label(for='productName') Product Name:
+                input.form-control(type='text', name='productName')
+            div.form-group
+                label(for='stockQuantity') Quantity:
+                input.form-control(type='text', name='stockQuantity')
+            div.form-group
+                label(for='stockPrice') Price/Unit:
+                input.form-control(type='text', name='stockPrice')
+            div.form-group
+                label(for='supplierName') Supplier Name:
+                input.form-control(type='text', name='supplierName')
+            div.form-group
+                label(for='supplierContact') Supplier Contact:
+                input.form-control(type="text" , name='supplierContact')
+            
+            
+            div.form-group
+                label(for='description') Description:
+                input.form-control(type='text', placeholder='Description' name='description')
+            
+            
+            div.btn-group
+                a(href="/stock")
+                    button.btn All stocks 
+                button.btn(type="submit", name="btn-submit") Submit
+                
